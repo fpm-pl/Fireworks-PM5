@@ -6,7 +6,7 @@ namespace BlockHorizons\Fireworks;
 
 use BlockHorizons\Fireworks\entity\FireworksRocket;
 use BlockHorizons\Fireworks\item\Fireworks;
-use BlockHorizons\Fireworks\item\ExtraVanillaItem;
+use BlockHorizons\Fireworks\item\ExtraVanillaItems;
 use pocketmine\entity\EntityDataHelper;
 use pocketmine\entity\EntityFactory;
 use pocketmine\item\ItemIdentifier;
