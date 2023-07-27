@@ -122,9 +122,10 @@ class FireworksRocket extends Entity
 
 				if ($info->getByte("FireworkFlicker", 0) === 1) {
 					$this->getWorld()->broadcastPacketToViewers($this->location, LevelSoundEventPacket::create(LevelSoundEvent::TWINKLE, $this->location->asVector3(), -1,":", false, false));
-				}
-			}
-		}
+				 }
+			 }
+		 }
+	     }
 	}
 
 	public function syncNetworkData(EntityMetadataCollection $properties): void
