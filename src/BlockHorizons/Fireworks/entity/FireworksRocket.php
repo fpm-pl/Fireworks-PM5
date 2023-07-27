@@ -27,6 +27,18 @@ class FireworksRocket extends Entity
 		return EntityIds::FIREWORKS_ROCKET;
 	}
 
+	public function getInitialDragMultiplier(): float
+        {
+        // You can adjust this value as per your requirements.
+               return 1.0;
+        }
+
+        public function getInitialGravity(): float
+        {
+        // You can adjust this value as per your requirements.
+              return 1.0;
+        }
+
 	/** @var int */
 	protected $lifeTime = 0;
 	/** @var Fireworks */
@@ -91,11 +103,12 @@ class FireworksRocket extends Entity
 	public function playSounds(): void
 	{
 		// This late in, there's 0 chance fireworks tag is null
-		$fireworksTag = $this->fireworks->getNamedTag()->getCompoundTag("Fireworks") ?? new CompoundTag();
-		$explosionsTag = $fireworksTag->getListTag("Explosions");
-		if ($explosionsTag === null) {
-			// We don't throw an error here since there are fireworks that can die without noise or particles,
-			// which means they are lacking an explosion tag.
+		$fireworksTag = $this->fireworks->getNamedTag()->getCompoundTag("Fireworks");
+                if ($fireworksTag !== null) {
+                $explosionsTag = $fireworksTag->getListTag("Explosions");
+
+                if ($explosionsTag === null) {
+                $player = $this->fireworks->getOwningEntity();
 			return;
 		}
 
